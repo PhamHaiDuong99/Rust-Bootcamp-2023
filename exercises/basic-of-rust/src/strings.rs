@@ -50,11 +50,11 @@ fn reverse_string(input: &str) -> String {
 // Check if a string is a palindrome
 fn is_palindrome(word: &str) -> bool {
     // word.chars().collect::<Vec<char>>() == word.chars().rev().collect::<Vec<char>>()
-    word.to_lowercase().to_string();
-    word == reverse_string(word)
+   
+    word.to_owned().to_lowercase() == reverse_string(&word.to_lowercase()[..])
 }
 
-// Exercise 6
+// Exercise 6   
 // Count the occurrences of a character in a string
 fn count_char_occurrences(string: &str, ch: char) -> usize {
     //string.chars().filter(|c| *c == ch).count()
